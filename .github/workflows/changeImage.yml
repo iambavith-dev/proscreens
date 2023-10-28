@@ -20,9 +20,11 @@ jobs:
     changeImage: 
         name: Change Image
         runs-on: ubuntu-latest
-
         steps:
-            - uses: actions/checkout@v2
+            - name: Checkout Repository
+              uses: actions/checkout@v2
+              with:
+                token: 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
 
             - name: Download Image from firebase
               run: |
