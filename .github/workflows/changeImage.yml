@@ -1,0 +1,38 @@
+name: Change image
+
+on:
+    workflow_dispatch:
+        inputs:
+            imageUrl: 
+                description: Image url
+                default: null
+                required: true
+            postId:
+                description: Post Id
+                default: ''
+                required: true
+            extension:
+                description: Image extension
+                default: png
+                required: true
+
+jobs:
+    changeImage: 
+        name: Change Image
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v2
+
+            - name: Download Image from firebase
+              run: |
+                wget ${{ github.event.inputs.imageUrl }}
+            
+            - name: Push to github
+              run: |
+                git config --global user.email "iambavith@gmail.com"
+                git config --global user.name "iambavith"
+                git add .
+                git commit -a -m "added image"
+                git push
