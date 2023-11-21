@@ -28,13 +28,10 @@ jobs:
             - name: Download Image from firebase
               run: |
                 wget ${{ github.event.inputs.imageUrl }}
-
-            - name: Commit and push image
-                run: |
-                      git config --local user.email "action@github.com"
-                      git config --local user.name "GitHub Action"
-                      git add .
-                      git commit -m "Add downloaded image"
-                      git push
-                env:
+                git config --local user.email "action@github.com"
+                git config --local user.name "GitHub Action"
+                git add .
+                git commit -m "Add downloaded image"
+                git push
+              env:
                 GITHUB_TOKEN: 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
