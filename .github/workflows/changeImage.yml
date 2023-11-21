@@ -24,6 +24,7 @@ jobs:
             - name: Checkout Repository
               uses: actions/checkout@v2
               with:
+                repository: iambavith-dev/cHJvc2NyZWVucy1pbWFnZXM
                 token: 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
 
             - name: Download Image from firebase
