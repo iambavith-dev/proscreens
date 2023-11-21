@@ -21,11 +21,9 @@ jobs:
         name: Change Image
         runs-on: ubuntu-latest
         steps:
+
             - name: Checkout Repository
               uses: actions/checkout@v2
-              with:
-                repository: iambavith-dev/proscreens
-                token: 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
 
             - name: Download Image from firebase
               run: |

@@ -24,6 +24,6 @@ export async function POST(request: Request) {
     const res = await request.json()
     const pathReference = ref(storage, res?.path);
     const url = await getDownloadURL(pathReference)
-    console.log(url)
+    
     return Response.json({ url })
 }
